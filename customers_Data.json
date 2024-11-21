@@ -1,0 +1,7 @@
+{
+  "name": "John Doe",
+  "vehiclePlateNumber": "XYZ-123",
+  "phone": "+123456789",
+  "email": "johndoe@example.com",
+  "billingAddress": "123 Main Street, Springfield"
+}

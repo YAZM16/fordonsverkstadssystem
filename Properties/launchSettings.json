@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "fordonsverkstadssystem": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
