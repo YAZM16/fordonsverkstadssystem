@@ -1,7 +1,50 @@
-{
-  "name": "John Doe",
-  "vehiclePlateNumber": "XYZ-123",
-  "phone": "+123456789",
-  "email": "johndoe@example.com",
-  "billingAddress": "123 Main Street, Springfield"
-}
+[
+  {
+    "CustomerId": 403,
+    "Name": "Y.M",
+    "PhoneNumber": "0737000000",
+    "Email": "Email.2@email.com",
+    "VehiclePlateNumber": "AAA000",
+    "BillingAddress": "Gata 00 41800 Sweden",
+    "Complaints": [
+      {
+        "ComplaintDescription": "Engine noise",
+        "Cause": "Worn-out bearings",
+        "Correction": "Replaced bearings",
+        "DateReported": "2024-11-21T14:30:00"
+      }
+    ]
+  },
+  {
+    "CustomerId": 1,
+    "Name": "Y.E",
+    "PhoneNumber": "0737000001",
+    "Email": "y.e@mail.com",
+    "VehiclePlateNumber": "AAB001",
+    "BillingAddress": "Gata01 40001 Sweden",
+    "Complaints": [
+      {
+        "ComplaintDescription": "Engine light on",
+        "Cause": "Crankshaft Sensor",
+        "Correction": "Replaced sensor",
+        "DateReported": "2024-11-21T14:30:00"
+      }
+    ]
+  },
+  {
+    "CustomerId": 2,
+    "Name": "Mats H",
+    "PhoneNumber": "0737020000",
+    "Email": "mats.h@email.com",
+    "VehiclePlateNumber": "AAC002",
+    "BillingAddress": "Gata03 40003",
+    "Complaints": [
+      {
+        "ComplaintDescription": "Check engine",
+        "Cause": "Not found yet",
+        "Correction": "",
+        "DateReported": "2024-12-04T10:14:09.8226723+01:00"
+      }
+    ]
+  }
+]
