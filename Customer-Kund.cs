@@ -8,7 +8,9 @@
         public string Email { get; set; }
         public string VehiclePlateNumber { get; set; }
         public string BillingAddress { get; set; }
-
+        public List<Complaint> Complaints { get; set; } = new List<Complaint>(); // Complaints list
+        public Customer() { }
+        
         public Customer(int customerId, string name, string phoneNumber, string email, string vehiclePlateNumber, string billingAddress)
         {
             CustomerId = customerId;

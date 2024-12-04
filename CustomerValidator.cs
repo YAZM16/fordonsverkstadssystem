@@ -1,5 +1,8 @@
 ﻿using FluentValidation;
-
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
 namespace VehicleWorkshopManagement
 {
     public class CustomerValidator : AbstractValidator<Customer>
