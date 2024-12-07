@@ -69,6 +69,7 @@ git checkout -b feature/your-feature
 3. Commit your changes:
 git commit -m "Add new feature"
 4. Push to your branch and submit a pull request.
+5. OBS : Dont forgot to change Path to your local name file (:
 ---
 
 📞 Contact
