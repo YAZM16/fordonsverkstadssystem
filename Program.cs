@@ -1,5 +1,8 @@
 ﻿using System;
-
+using Spectre.Console;
+using System.Text.Json;
+using FluentValidation;
+using System.Text.RegularExpressions;
 namespace VehicleWorkshopManagement
 {
     class Program
@@ -24,7 +27,9 @@ namespace VehicleWorkshopManagement
             while (!exit)
             {
                 Console.Clear();
-                Console.WriteLine("--- Vehicle Workshop Customer Management ---\n");
+                AnsiConsole.Write(new FigletText("Vehicle. Workshop. System ")
+                    .Centered()
+                    .Color(Color.Yellow)); 
                 for (int i = 0; i < menuOptions.Length; i++)
                 {
                     if (i == selectedIndex)
@@ -64,31 +69,106 @@ namespace VehicleWorkshopManagement
             switch (selectedIndex)
             {
                 case 0: // Add Customer
-                    Console.Write("Enter Customer ID: ");
-                    int id = int.Parse(Console.ReadLine());
-                    Console.Write("Enter Name: ");
-                    string name = Console.ReadLine();
-                    Console.Write("Enter Phone Number: ");
-                    string phone = Console.ReadLine();
-                    Console.Write("Enter Email: ");
-                    string email = Console.ReadLine();
-                    Console.Write("Enter Vehicle Plate Number: ");
-                    string plate = Console.ReadLine();
-                    Console.Write("Enter Billing Address: ");
-                    string address = Console.ReadLine();
+                    int id;
+                    string name, phone, email, plate, address;
 
-                    // Pass all required arguments to the constructor
-                    Customer newCustomer = new Customer(id, name, phone, email, plate, address);
-                    customerManager.AddCustomer(newCustomer);
+                    // Loop tills ett giltigt ID anges
+                    while (true)
+                    {
+                        Console.Write("Enter Customer ID: ");
+                        if (int.TryParse(Console.ReadLine(), out id) && id > 0)
+                            break;
+                        AnsiConsole.Markup("[red]Invalid ID. It must be a positive number.[/]");
+                    }
 
-                    Console.WriteLine("\nCustomer added successfully!");
+                    // Loop tills ett giltigt namn anges
+                    while (true)
+                    {
+                        Console.Write("Enter Name: ");
+                        name = Console.ReadLine();
+                        if (!string.IsNullOrWhiteSpace(name))
+                            break;
+                        AnsiConsole.Markup("[red]Name cannot be empty.[/]");
+                    }
+
+                    // Loop tills ett giltigt telefonnummer anges
+                      bool isValid = false;
+
+                    while (true) // Fortsätt tills giltig inmatning ges
+                    {
+                        Console.Write("Enter phone number (format: +46XXXXXXXXX or 0XXXXXXXXX): ");
+                        phone = Console.ReadLine();
+
+                        // Regex för svenska telefonnummer
+                        string pattern = @"^(\+46|0)\d{9}$";
+
+                        if (Regex.IsMatch(phone, pattern))
+                        {
+                            Console.WriteLine($"Phone number {phone} is valid.");
+                            isValid = true; // Avsluta loopen
+                            break;
+                        }
+                            
+                        else
+                        {
+                            AnsiConsole.Markup("[Red]Invalid phone number. Please try again.[/]");
+                        }
+                    }
+
+                    // Fortsätt med resten av programmet
+                    AnsiConsole.Markup("[blue]Thank you! Moving forward.[/]");
+                
+
+                    // Loop tills en giltig e-post anges
+                    while (true)
+                    {
+                        Console.Write("Enter Email: ");
+                        email = Console.ReadLine();
+                        if (!string.IsNullOrWhiteSpace(email) && email.Contains("@"))
+                            break;
+                        AnsiConsole.Markup("[red]Invalid email address. Please include '@'.[/]");
+                    }
+
+                    // Loop tills ett giltigt registreringsnummer anges
+                    while (true)
+                    {
+                        Console.Write("Enter Vehicle Plate Number: ");
+                        plate = Console.ReadLine();
+                        if (!string.IsNullOrWhiteSpace(plate))
+                            break;
+                        AnsiConsole.Markup("[red]Vehicle plate number cannot be empty.[/]");
+                    }
+
+                    // Loop tills en giltig faktureringsadress anges
+                    while (true)
+                    {
+                        Console.Write("Enter Billing Address: ");
+                        address = Console.ReadLine();
+                        if (!string.IsNullOrWhiteSpace(address))
+                            break;
+                        AnsiConsole.Markup("[red]Billing address cannot be empty.[/]");
+                    }
+
+                    // Skapa och lägg till kund efter all validering
+                    try
+                    {
+                        Customer newCustomer = new Customer(id, name, phone, email, plate, address);
+                        customerManager.AddCustomer(newCustomer);
+
+                        AnsiConsole.Markup("\n[green]Customer added successfully![/]");
+                    }
+                    catch (Exception ex)
+                    {
+                        AnsiConsole.Markup($"[red]An error occurred: {ex.Message}[/]");
+                    }
+
                     Console.ReadKey();
                     break;
 
 
                 case 1: // View All Customers
                     customerManager.ViewAllCustomers();
-                    Console.WriteLine("\nPress any key to return to the menu...");
+                    AnsiConsole.Markup("[yellow]\nPress any key to return to the menu.[/]");
                     Console.ReadKey();
                     break;
 

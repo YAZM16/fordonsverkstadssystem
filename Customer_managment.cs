@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using FluentValidation;
 using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace VehicleWorkshopManagement
 {
     public class CustomerManager
     {
-        private const string FilePath = @"C:\Users\user\source\repos\fordonsverkstadssystem\customers_Data.json";
+        private const string FilePath = @"C:\Users\user\source\repos\fordonsverkstadssystem_Åtgärder\customers_Data.json";
         private List<Customer> customers = new List<Customer>();
 
         private CustomerValidator validator = new CustomerValidator();
@@ -32,7 +33,7 @@ namespace VehicleWorkshopManagement
 
             customers.Add(customer);
             SaveData();
-            Console.WriteLine("Customer added successfully!");
+            
         }
 
         public void ViewAllCustomers()

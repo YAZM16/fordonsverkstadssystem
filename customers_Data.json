@@ -46,5 +46,46 @@
         "DateReported": "2024-12-04T10:14:09.8226723+01:00"
       }
     ]
+  },
+  {
+    "CustomerId": 33,
+    "Name": "Test",
+    "PhoneNumber": "0737000000",
+    "Email": "Email@ex.com",
+    "VehiclePlateNumber": "YYY000",
+    "BillingAddress": "Gata",
+    "Complaints": [
+      {
+        "ComplaintDescription": "El fault",
+        "Cause": "unkown",
+        "Correction": "",
+        "DateReported": "2024-12-07T17:21:39.9814769+01:00"
+      }
+    ]
+  },
+  {
+    "CustomerId": 32,
+    "Name": "Test2",
+    "PhoneNumber": "0737000000",
+    "Email": "Email@ex.com",
+    "VehiclePlateNumber": "AAA222",
+    "BillingAddress": "Gata",
+    "Complaints": [
+      {
+        "ComplaintDescription": "Front light out",
+        "Cause": "not found yet",
+        "Correction": ".",
+        "DateReported": "2024-12-07T17:10:35.2433261+01:00"
+      }
+    ]
+  },
+  {
+    "CustomerId": 34,
+    "Name": "Test3",
+    "PhoneNumber": "0737000000",
+    "Email": "Email@ex.com",
+    "VehiclePlateNumber": "AAA090",
+    "BillingAddress": "Gata",
+    "Complaints": []
   }
 ]
