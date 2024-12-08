@@ -1,7 +1,7 @@
 # Vehicle Workshop Management System 🚗🔧  
 
+![Project Presentation](https://imgur.com/QI8h5ND.jpg())
 
-![Project Presentation](Grey_minimalist_business_project_presentation.jpg)
 
 
 
