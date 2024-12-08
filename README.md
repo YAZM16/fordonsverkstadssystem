@@ -2,6 +2,7 @@
 
 
 ![ws](https://github.com/user-attachments/assets/06b94344-e2f6-4845-928d-c0bf32f5719c)
+C:\Users\user\Downloads\Grey minimalist business project presentation .jpg
 *A efficient system for managing customer and vehicle data in a workshop.*
 ---
 [![GitHub Repo Size](https://img.shields.io/github/repo-size/YAZM16/fordonsverkstadssystem)](https://github.com/YAZM16/fordonsverkstadssystem)
