@@ -87,5 +87,14 @@
     "VehiclePlateNumber": "AAA090",
     "BillingAddress": "Gata",
     "Complaints": []
+  },
+  {
+    "CustomerId": 35,
+    "Name": "Test34",
+    "PhoneNumber": "0737000000",
+    "Email": "ex@email.com",
+    "VehiclePlateNumber": "AAA000",
+    "BillingAddress": "Gata",
+    "Complaints": []
   }
 ]
