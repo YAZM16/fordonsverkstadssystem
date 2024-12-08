@@ -1,7 +1,8 @@
 # Vehicle Workshop Management System 🚗🔧  
 
 
-![Project Presentation](pic/Grey_minimalist_business_project_presentation.jpg)
+![Project Presentation](Grey_minimalist_business_project_presentation.jpg)
+
 
 
 *A efficient system for managing customer and vehicle data in a workshop.*
